@@ -1,0 +1,32 @@
+@mixin inline-before
+	&::before
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		@content
+
+@mixin absolute-before($top, $left, $width, $height)
+	&::before
+		content: ''
+		position: absolute
+		top: $top
+		left: $left
+		width: $width
+		height: $height
+		@content
+	
+
+@mixin font($size: 15px, $height: 26px, $weight: 400, $spacing: 0, $color: $black)
+	font-size: $size
+	line-height: $height
+	font-weight: $weight
+	letter-spacing: $spacing
+	color: $color
+
+@mixin btn
+	display: inline-block
+	padding: 6px 32px
+	box-sizing: border-box
+	vertical-align: middle
+	border-radius: 30px
+	

@@ -1,0 +1,177 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+@import "mixins"
+
+// Пользовательские стили
+.header,
+.footer
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 40px
+	width: 100%
+	box-sizing: border-box
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+.header
+	margin-bottom: 53px
+	&__link
+		padding: 18px 0
+		box-sizing: border-box
+		@include font(14px, 34px, 500)
+		text-decoration: none
+		text-transform: uppercase
+		transition: 0.5s
+		&:hover
+			color: $dark-blue
+		@include inline-before
+			margin-top: -2px
+			margin-right: 10px
+			background-size: cover
+			background-position: center
+			background-repeat: no-repeat
+			transition: 0.5s
+			color: $dark-blue
+		&_back::before
+			width: 8px
+			height: 15px
+			background-image: url('../img/arrow-back.svg')
+		&_sign::before
+			width: 18px
+			height: 18px
+			background-image: url('../img/sign.svg')
+	&__img
+		display: block
+	
+.block-title
+	margin-bottom: 47px
+	text-align: center
+	&__h2
+		margin: 0 auto
+		@include font(30px, 40px)
+	&__span
+		display: block
+		@include font(18px, 44px, 500, 0.05em)
+		text-transform: uppercase
+		opacity: 0.7
+
+
+// grid
+.flex-container
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: 30px
+
+.flex-container__3
+	margin-right: 40px
+	margin-bottom: 30px
+	width: calc((100% - 80px) / 3)
+	&:nth-of-type(3n)
+		margin-right: 0
+
+.flex-container__4
+	margin-right: 40px
+	margin-bottom: 30px
+	width: calc((100% - 120px) / 4)
+	&:nth-of-type(4n)
+		margin-right: 0
+// /grid
+
+.options-item
+	box-sizing: border-box
+	box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1)
+	&__link-img
+		display: block
+		margin-bottom: 27px
+		width: 100%
+		text-decoration: none
+	&__img
+		width: 100%
+		height: auto
+		max-width: inherit
+	&__content
+		padding: 0 30px 24px
+		width: 100%
+		box-sizing: border-box
+	&__top-content
+		margin-bottom: 25px
+		text-align: center
+		border-bottom: 1px dashed rgba(0, 0, 0, 0.1)
+		.btn
+			margin-bottom: 30px
+	&__title
+		margin: 0 0 4px
+	&__link
+		display: inline-block
+		text-align: center
+		@include font(28px, 34px, 400, 0, $blue)
+		text-decoration: none
+	&__cost
+		text-align: center
+		font-size: 24px
+		line-height: 26px
+	&__cost-info
+		margin-bottom: 18px
+		text-align: center
+		font-size: 16px
+		line-height: 24px
+	&__list
+		margin: 0
+		padding: 0
+	&__li
+		position: relative
+		display: block
+		margin-bottom: 15px
+		padding-left: 28px
+		box-sizing: border-box
+		font-size: 15px
+		line-height: 25px
+		list-style: none
+		@include absolute-before(4px, 5px, 6px, 14px)
+			box-sizing: border-box
+			border:
+				right: 2px solid $blue
+				bottom: 2px solid $blue
+			transform: rotate(45deg)
+	&_dark
+		background-color: $gray
+		border: 1px solid $dark-gray
+		.options-item__link
+			color: $marine
+		.options-item__li::before
+			border-color: $marine
+	&_visited
+		.options-item__link
+			color: $dark-blue
+		.options-item__li::before
+			border-color: $dark-blue
+
+.btn
+	@include btn
+	@include font(15px, 34px, 500, 0.1em, $white)
+	text-transform: uppercase
+	text-decoration: none
+	background-color: $marine
+	transition: 0.5s
+	&_blue
+		background-color: $blue
+	&_transparent
+		color: $marine
+		background-color: transparent
+		border: 2px solid $marine
+	&_dark-blue
+		background-color: $dark-blue
+	&_white
+		color: $black
+		background-color: transparent
+		border: 2px solid $black
+		
+.label-check
+	display: block
+	cursor: pointer
+
+@import "media" // Всегда в конце
+
+//spent 2 hour
