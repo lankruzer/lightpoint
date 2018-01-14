@@ -80,6 +80,9 @@
 // /grid
 
 .options-item
+	display: flex
+	flex-direction: column
+	padding-bottom: 25px
 	box-sizing: border-box
 	box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1)
 	&__link-img
@@ -92,11 +95,11 @@
 		height: auto
 		max-width: inherit
 	&__content
-		padding: 0 30px 24px
+		padding: 0 30px 0
 		width: 100%
 		box-sizing: border-box
 	&__top-content
-		margin-bottom: 25px
+		margin-bottom: 24px
 		text-align: center
 		border-bottom: 1px dashed rgba(0, 0, 0, 0.1)
 		.btn
@@ -118,7 +121,7 @@
 		font-size: 16px
 		line-height: 24px
 	&__list
-		margin: 0
+		margin: 0 0 20px
 		padding: 0
 	&__li
 		position: relative
@@ -135,6 +138,15 @@
 				right: 2px solid $blue
 				bottom: 2px solid $blue
 			transform: rotate(45deg)
+	&__details
+		margin-top: auto
+		margin-bottom: 0
+		align-self: center
+		@include font(15px, 34px, 500, 0.1em, $blue)
+		text-transform: uppercase
+		text-decoration: none
+		&:hover
+			text-decoration: underline
 	&_dark
 		background-color: $gray
 		border: 1px solid $dark-gray
@@ -142,12 +154,16 @@
 			color: $marine
 		.options-item__li::before
 			border-color: $marine
+		.options-item__details
+			color: $marine
 	&_visited
 		.options-item__link
 			color: $dark-blue
 		.options-item__li::before
 			border-color: $dark-blue
-
+		.options-item__details
+			color: $dark-blue
+	
 .btn
 	@include btn
 	@include font(15px, 34px, 500, 0.1em, $white)
@@ -170,7 +186,192 @@
 		
 .label-check
 	display: block
+	margin-bottom: 20px
+	line-height: 15px
 	cursor: pointer
+	&__input-hide
+		display: none
+		&:checked + .label-check__input-show::before
+			opacity: 1
+	&__input-show
+		position: relative
+		display: inline-block
+		margin-top: -2px
+		margin-right: 12px
+		width: 16px
+		height: 16px
+		box-sizing: border-box
+		vertical-align: middle
+		border: 1px solid $dark-gray
+		background-color: $gray
+		transition: 0.5s
+		@include absolute-before(2px, 5px, 5px, 8px)
+			box-sizing: border-box
+			border:
+				right: 2px solid $black
+				bottom: 2px solid $black
+			transform: rotate(45deg)
+			transition: 0.25s
+			opacity: 0
+
+.offers
+	margin-bottom: 60px
+	border-bottom: 1px solid $dark-gray
+
+.offers-item
+	text-align: center
+	&__title
+		margin: 0
+	&__link
+		@include font(28px, 34px, 400, 0, $marine)
+		text-decoration: none
+		transition: 0.25s
+		&:hover
+			color: $blue
+		&:active
+			color: $dark-blue
+	&__info
+		font-size: 18px
+		line-height: 24px
+	.btn
+		&:hover
+			background-color: $blue
+		&:active
+			background-color: $dark-blue
+
+.benefits
+	.block-title__h2
+		font-size: 40px
+		line-height: 40px
+	&-item
+		text-align: center
+		&__block-icon
+			margin-bottom: 20px
+		&__title
+			@include font(18px, 24px, 500, 0, $black)
+		&__info
+			margin-bottom: 0
+
+.slider
+	position: relative
+	margin-bottom: 55px
+	min-height: 500px
+	& *
+		outline: none
+		user-select: none
+	.slide
+		min-height: 500px
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		.container
+			display: flex
+			justify-content: center
+			align-items: center
+			min-height: 500px
+			text-align: center
+		&__small-text
+			@include font(16px, 30px, 500, 0, $white)
+			text-transform: uppercase
+		&__big-text
+			@include font(42px, 42px, 500, 0, $white)
+			text-transform: uppercase
+	.slick-dots
+		position: absolute
+		bottom: 75px
+		display: flex
+		justify-content: center
+		margin: 0
+		padding: 0
+		width: 100%
+		list-style: none
+		button
+			display: inline-block
+			vertical-align: middle
+			margin: 3px 6px
+			padding: 0
+			width: 6px
+			height: 6px
+			font-size: 0
+			background-color: $white
+			border: 0
+			outline: none
+			border-radius: 50%
+			opacity: 0.6
+			cursor: pointer
+			transition: 0.25s
+			&:hover
+				opacity: 1
+		.slick-active button
+			opacity: 1
+	.slick-arrow
+		position: absolute
+		top: 0%
+		z-index: 5
+		padding: 0
+		height: 100%
+		width: 100px
+		background: transparent
+		font-size: 0
+		border: 0
+		cursor: pointer
+		@include absolute-before(53%, 50%, 30px, 30px)
+			box-sizing: border-box
+			border:
+				left: 2px solid $white
+				bottom: 2px solid $white
+			transform: translate(-50%, -50%) rotate(45deg)
+		&.slick-prev
+			left: 0
+		&.slick-next
+			left: auto
+			right: 0
+			&::before
+				border:
+					left: 0
+					bottom: 0
+					top: 2px solid $white
+					right: 2px solid $white
+
+.article-preview
+	margin-bottom: 60px
+	text-align: center
+	&__title
+		margin: 0 0 30px
+		@include font(28px, 34px, 500, 0, $black)
+	&__text
+		margin: 0 auto 30px
+		max-width: 880px
+	.btn
+		font-size: 14px
+		line-height: 26px
+
+.footer
+	padding-top: 10px
+	padding-bottom: 10px
+	color: rgba(0, 0, 0, 0.6)
+	border-top: 1px solid $dark-gray
+	.copy
+		margin-right: -50px
+
+.footer-menu
+	display: flex
+	flex-wrap: wrap
+	margin: 0 auto
+	padding: 0
+	list-style: none
+	&__link
+		display: block
+		padding: 11px 11px
+		box-sizing: border-box
+		font-size: 14px
+		line-height: 26px
+		color: rgba(0, 0, 0, 0.6)
+		text-decoration: none
+		transition: 0.25s
+		&:hover
+			color: rgba(0, 0, 0, 1)
+
 
 @import "media" // Всегда в конце
 

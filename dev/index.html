@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 	
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
@@ -54,20 +55,22 @@
 							<form action="#" method="post" class="options-item__form">
 								<label class="label-check">
 									<input type="checkbox" name="options" class="label-check__input-hide" value="checked" checked>
-									<span class="label-check__input-vis"></span>
+									<span class="label-check__input-show"></span>
 									Checked
 								</label>
 								<label class="label-check">
-									<input type="checkbox" name="options" class="input-check" value="empty">
+									<input type="checkbox" name="options" class="label-check__input-hide" value="empty">
+									<span class="label-check__input-show"></span>
 									Empty
 								</label>
 								<label class="label-check">
-									<input type="checkbox" name="options" class="input-check" value="disabled" disabled>
+									<input type="checkbox" name="options" class="label-check__input-hide" value="disabled" disabled>
+									<span class="label-check__input-show"></span>
 									Disabled
 								</label>
 							</form>
-							<a href="#" class="options-item__details">Details</a>
 						</div>
+						<a href="#" class="options-item__details">Details</a>
 					</article>
 					<article class="flex-container__3 options-item options-item_dark">
 						<a href="#" class="options-item__link-img">
@@ -88,8 +91,8 @@
 								<li class="options-item__li">A digital replica of the paper, emailed daily</li>
 								<li class="options-item__li">Money-saving offers and weekly sales</li>
 							</ul>
-							<a href="#" class="options-item__details">Details</a>
 						</div>
+						<a href="#" class="options-item__details">Details</a>
 					</article>
 					<article class="flex-container__3 options-item options-item_visited">
 						<a href="#" class="options-item__link-img">
@@ -111,8 +114,8 @@
 								<li class="options-item__li">Money-saving offers and weekly sales</li>
 								<li class="options-item__li">The print edition, delivered Sunday</li>
 							</ul>
-							<a href="#" class="options-item__details">Details</a>
 						</div>
+						<a href="#" class="options-item__details">Details</a>
 					</article>
 				</div>
 			</section>
@@ -127,17 +130,17 @@
 						<article class="flex-container__3 offers-item">
 							<h2 class="offers-item__title"><a href="#" class="offers-item__link">Sunday Only</a></h2>
 							<p class="offers-item__info">99¢ / 4 weeks only then $1.99 / week</p>
-							<a href="#" class="btn btn_marine">Strat now</a>
+							<a href="#" class="btn btn_marine">Start now</a>
 						</article>
 						<article class="flex-container__3 offers-item">
 							<h2 class="offers-item__title"><a href="#" class="offers-item__link">Thursday-Sunday</a></h2>
 							<p class="offers-item__info">99¢ / 4 weeks only then $1.99 / week</p>
-							<a href="#" class="btn btn_marine">Strat now</a>
+							<a href="#" class="btn btn_marine">Start now</a>
 						</article>
 						<article class="flex-container__3 offers-item">
 							<h2 class="offers-item__title"><a href="#" class="offers-item__link">Monday-Sunday</a></h2>
 							<p class="offers-item__info">99¢ / 4 weeks only then $1.99 / week</p>
-							<a href="#" class="btn btn_marine">Strat now</a>
+							<a href="#" class="btn btn_marine">Start now</a>
 						</article>
 					</div>
 				</div>
@@ -180,7 +183,7 @@
 		</div>
 		<div class="slider">
 			<div class="slide" style="background-image: url(img/slide-1.jpg)">
-				<div class="slide__container">
+				<div class="container">
 					<div class="slide__content">
 						<div class="slide__small-text">Special</div>
 						<div class="slide__big-text">Life & Style and Travel sections</div>
@@ -188,7 +191,7 @@
 				</div>
 			</div>
 			<div class="slide" style="background-image: url(img/slide-1.jpg)">
-				<div class="slide__container">
+				<div class="container">
 					<div class="slide__content">
 						<div class="slide__small-text">Special 1</div>
 						<div class="slide__big-text">Life & Style and Travel sections 1</div>
@@ -196,7 +199,7 @@
 				</div>
 			</div>
 			<div class="slide" style="background-image: url(img/slide-1.jpg)">
-				<div class="slide__container">
+				<div class="container">
 					<div class="slide__content">
 						<div class="slide__small-text">Special 2</div>
 						<div class="slide__big-text">Life & Style and Travel sections 2</div>
@@ -204,7 +207,7 @@
 				</div>
 			</div>
 			<div class="slide" style="background-image: url(img/slide-1.jpg)">
-				<div class="slide__container">
+				<div class="container">
 					<div class="slide__content">
 						<div class="slide__small-text">Special 3</div>
 						<div class="slide__big-text">Life & Style and Travel sections 3</div>
@@ -212,7 +215,7 @@
 				</div>
 			</div>
 		</div>
-		<article class="article-preview">
+		<article class="article-preview container">
 			<h2 class="article-preview__title">Place some text here</h2>
 			<p class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at nisl est. Morbi ut odio et felis ultricies tincidunt. Nullam interdum nec lectus at sagittis. Pellentesque fringilla ligula tortor, faucibus dictum massa mollis ac. Aenean sollicitudin mi quis purus placerat, vitae tempor nisl imperdiet. Integer non sodales mauris.</p>
 			<a href="#" class="btn btn_white">More</a>
@@ -220,18 +223,28 @@
 	</main>
 
 	<footer class="footer">
-		<div class="copyright">© 2017</div>
+		<div class="copy">© 2017</div>
 		<ul class="footer-menu">
 			<li class="footer-menu__li">
 				<a href="#" class="footer-menu__link">Home</a>
+			</li>
+			<li class="footer-menu__li">
 				<a href="#" class="footer-menu__link">FAQ</a>
+			</li>
+			<li class="footer-menu__li">
 				<a href="#" class="footer-menu__link">Contact Us</a>
+			</li>
+			<li class="footer-menu__li">
 				<a href="#" class="footer-menu__link">Terms of Service</a>
+			</li>
+			<li class="footer-menu__li">
 				<a href="#" class="footer-menu__link">Privacy Policy</a>
 			</li>
 		</ul>
 	</footer>
-
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 	<script src="js/scripts.min.js"></script>
 
 </body>
