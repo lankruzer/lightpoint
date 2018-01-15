@@ -4,7 +4,43 @@
 @import "vars"
 @import "mixins"
 
-// Пользовательские стили
+// grid
+.flex-container
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: 30px
+
+.flex-container__3
+	margin-right: 40px
+	margin-bottom: 30px
+	width: calc((100% - 80px) / 3)
+	&:nth-of-type(3n)
+		margin-right: 0
+
+.flex-container__4
+	margin-right: 40px
+	margin-bottom: 30px
+	width: calc((100% - 120px) / 4)
+	&:nth-of-type(4n)
+		margin-right: 0
+// /grid
+
+// 2 columns grid
+.page-columns
+	display: flex
+	min-height: 100vh
+	&__1
+		display: flex
+		flex-direction: column
+		width: calc(100% - 362px)
+	&__2
+		width: 362px
+	&__full
+		display: flex
+		flex-direction: column
+		width: 100%
+// /2 columns grid
+
 .header,
 .footer
 	display: flex
@@ -42,8 +78,14 @@
 			width: 18px
 			height: 18px
 			background-image: url('../img/sign.svg')
+	&__logo
+		margin: 0 auto
+		display: flex
+		align-items: center
+		min-height: 70px
 	&__img
 		display: block
+		margin: 0 auto
 	
 .block-title
 	margin-bottom: 47px
@@ -57,28 +99,69 @@
 		text-transform: uppercase
 		opacity: 0.7
 
+.btn
+	@include btn
+	@include font(15px, 30px, 500, 0.1em, $white)
+	text-transform: uppercase
+	text-decoration: none
+	background-color: $marine
+	transition: 0.5s
+	&_blue
+		border: 2px solid $blue
+		background-color: $blue
+		&:hover
+			border: 2px solid $dark-blue
+			background-color: $dark-blue
+	&_transparent
+		color: $marine
+		background-color: transparent
+		border: 2px solid $marine
+		&:hover
+			border: 2px solid $blue
+			background-color: $blue
+			color: $white
+	&_dark-blue
+		border: 2px solid $dark-blue
+		background-color: $dark-blue
+		&:hover
+			background-color: transparent
+			color: $dark-blue
+	&_white
+		color: $black
+		background-color: transparent
+		border: 2px solid $black
+		&:hover
+			background-color: $black
+			color: $white
+	
+.footer
+	margin: auto 0 0 0
+	padding-top: 10px
+	padding-bottom: 10px
+	color: rgba(0, 0, 0, 0.6)
+	border-top: 1px solid $dark-gray
+	.copy
+		margin-right: -50px
 
-// grid
-.flex-container
+.footer-menu
 	display: flex
 	flex-wrap: wrap
-	margin-bottom: 30px
+	margin: 0 auto
+	padding: 0
+	list-style: none
+	&__link
+		display: block
+		padding: 11px 11px
+		box-sizing: border-box
+		font-size: 14px
+		line-height: 26px
+		color: rgba(0, 0, 0, 0.6)
+		text-decoration: none
+		transition: 0.25s
+		&:hover
+			color: rgba(0, 0, 0, 1)
 
-.flex-container__3
-	margin-right: 40px
-	margin-bottom: 30px
-	width: calc((100% - 80px) / 3)
-	&:nth-of-type(3n)
-		margin-right: 0
-
-.flex-container__4
-	margin-right: 40px
-	margin-bottom: 30px
-	width: calc((100% - 120px) / 4)
-	&:nth-of-type(4n)
-		margin-right: 0
-// /grid
-
+// index page
 .options-item
 	display: flex
 	flex-direction: column
@@ -112,6 +195,7 @@
 		text-align: center
 		@include font(28px, 34px, 400, 0, $blue)
 		text-decoration: none
+		transition: 0.25s
 	&__cost
 		text-align: center
 		font-size: 24px
@@ -139,6 +223,9 @@
 				right: 2px solid $blue
 				bottom: 2px solid $blue
 			transform: rotate(45deg)
+			transition: 0.25s
+		&:hover::before
+			border-color: $dark-blue
 	&__details
 		margin-top: auto
 		margin-bottom: 0
@@ -146,44 +233,38 @@
 		@include font(15px, 34px, 500, 0.1em, $blue)
 		text-transform: uppercase
 		text-decoration: none
+		transition: 0.25s
 		&:hover
 			text-decoration: underline
+			color: $dark-blue
 	&_dark
 		background-color: $gray
 		border: 1px solid $dark-gray
 		.options-item__link
 			color: $marine
+			&:hover
+				color: $blue
 		.options-item__li::before
 			border-color: $marine
+		.options-item__li:hover::before
+			border-color: $blue
 		.options-item__details
 			color: $marine
+			&:hover
+				color: $blue
 	&_visited
 		.options-item__link
 			color: $dark-blue
+			&:hover
+				color: $blue
 		.options-item__li::before
 			border-color: $dark-blue
+		.options-item__li:hover::before
+			border-color: $blue
 		.options-item__details
 			color: $dark-blue
-	
-.btn
-	@include btn
-	@include font(15px, 34px, 500, 0.1em, $white)
-	text-transform: uppercase
-	text-decoration: none
-	background-color: $marine
-	transition: 0.5s
-	&_blue
-		background-color: $blue
-	&_transparent
-		color: $marine
-		background-color: transparent
-		border: 2px solid $marine
-	&_dark-blue
-		background-color: $dark-blue
-	&_white
-		color: $black
-		background-color: transparent
-		border: 2px solid $black
+			&:hover
+				color: $blue
 		
 .label-check
 	display: block
@@ -322,6 +403,9 @@
 				left: 2px solid $white
 				bottom: 2px solid $white
 			transform: translate(-50%, -50%) rotate(45deg)
+			transition: 0.5s
+		&:hover::before
+			border-color: $marine
 		&.slick-prev
 			left: 0
 		&.slick-next
@@ -346,32 +430,189 @@
 	.btn
 		font-size: 14px
 		line-height: 26px
+// index page
 
-.footer
-	padding-top: 10px
-	padding-bottom: 10px
-	color: rgba(0, 0, 0, 0.6)
-	border-top: 1px solid $dark-gray
-	.copy
-		margin-right: -50px
+// sign-in page
+.sign-content
+	margin: 0 auto auto
+	width: 460px
 
-.footer-menu
+.btn_you-order
+	display: none
+
+.steps
 	display: flex
-	flex-wrap: wrap
-	margin: 0 auto
+	margin: 0 auto 50px
 	padding: 0
+	width: 80%
 	list-style: none
-	&__link
-		display: block
-		padding: 11px 11px
-		box-sizing: border-box
+	&__li
+		width: calc(100% / 3)
+		&_active
+			.steps__mark
+				border-color: $black
+			.steps__mark-img
+				opacity: 1
+			.steps__name
+				color: $black
+		&_active + .steps__li .steps__name
+			color: $black
+	&__mark
+		text-align: right;
+		border-bottom: 2px solid $dark-gray
+		transition: 0.5s
+	&__mark-img
+		opacity: 0
+		transform: translateX(50%)
+	&__name
+		text-align: center
 		font-size: 14px
-		line-height: 26px
+		line-height: 34px
 		color: rgba(0, 0, 0, 0.6)
-		text-decoration: none
-		transition: 0.25s
+		
+.digital
+	margin-bottom: 50px
+	padding: 20px 0
+	border: 
+		top: 1px solid $dark-gray
+		bottom: 1px solid $dark-gray
+	.block-title
+		margin-bottom: 0
+		&__h2
+			font-size: 26px
+			line-height: 34px
+		&__span
+			margin-top: 5px
+			font-size: 16px
+			line-height: 26px
+			text-transform: none
+
+.create
+	margin-bottom: 65px
+	border-bottom: 1px solid $dark-gray
+	.block-title__h2
+		margin-bottom: 15px
+		font-size: 28px
+		line-height: 34px
+	&__text
+		margin-bottom: 30px
+		font-size: 15px
+		line-height: 20px
+
+.link-login
+	font-size: 15px
+	line-height: 20px
+	font-weight: 500	
+	text-transform: uppercase
+	color: $black
+	text-decoration: none
+	transition: 0.25s
+	&:hover
+		color: $dark-blue
+		text-decoration: underline
+
+.create__btns 
+	.btn
+		min-width: 180px
+		text-align: left
+		&:not(:last-of-type)
+			margin-right: 20px
+
+.btn_fb,
+.btn_gl
+	position: relative
+	padding: 10px 28px
+	background-color: #3c5a99
+	color: #fff
+	@include absolute-before(50%, auto, 10px, 19px)
+		right: 20px
+		background-image: url(../img/icon-fb.svg)
+		background-size: cover
+		transform: translateY(-55%)
+	&:hover
+		background-color: $dark-blue
+
+.btn_gl
+	color: $black
+	background-color: $dark-gray
+	&::before
+		right: 15px
+		width: 24px
+		height: 24px
+		background-image: url('../img/icon-gl.png')
+	&:hover
+		background-color: darken($dark-gray, 10%)
+
+.form
+	display: flex
+	flex-direction: column
+	align-items: center
+	margin-bottom: 80px
+	&__label
+		margin-bottom: 30px
+		width: 100%
+		&:last-of-type
+			margin-bottom: 10px
 		&:hover
-			color: rgba(0, 0, 0, 1)
+			.form__placeholder
+				color: $blue
+	&__placeholder
+		display: block
+		font-size: 12px
+		line-height: 14px
+		color: rgba(0, 0, 0, 0.6)
+		transition: 0.25s
+	&__input
+		min-height: 40px
+		width: 100%
+		box-sizing: border-box	
+		font-size: 18px
+		line-height: 40px
+		border: 0
+		border-bottom: 1px solid $black
+		transition: 0.25s
+		outline: none
+		&:hover
+			border-color: $blue 
+		&:focus
+			border-color: $dark-blue
+	&__text
+		margin: 0 0 45px
+		width: 100%
+		font-size: 18px
+		line-height: 26px
+		font-weight: 500
+	.btn
+		font-weight: 500
+
+.aside-content
+	padding: 20px 60px
+	box-sizing: border-box
+	background-color: #f0f0f0
+	&__header
+		margin-bottom: 40px
+		padding-bottom: 20px
+		border-bottom: 1px solid $dark-gray
+	&__title
+		position: relative
+		display: block
+		font-size: 26px
+		line-height: 30px
+		@include absolute-before(50%, auto, 23px, 18px)
+			right: 0
+			background-image: url('../img/icon-basket.png')
+			background-size: cover
+			transform: translateY(-50%)
+	&__text
+		margin: 0 0 30px
+		font-size: 15px
+		line-height: 24px
+		&_bold
+			font-weight: 500
+		&_big
+			font-size: 18px
+// /sign-in page
+
 
 
 @import "media" // Всегда в конце

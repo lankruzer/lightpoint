@@ -76,6 +76,8 @@
 		margin-bottom: 43px
 		&__link
 			padding: 10px 0
+		&__logo
+			min-height: 54px
 
 	.block-title
 		margin-bottom: 20px
@@ -149,7 +151,60 @@
 			font-size: 26px
 			line-height: 30px
 	// /index page
-		
+
+	// sign-in page
+	.page-columns__1
+		width: calc(100% - 322px)
+		.footer
+			display: flex
+			flex-direction: column
+			flex-wrap: wrap
+			align-items: center
+			padding: 10px 0 20px 0
+			.copy
+				margin: 0 auto 5px
+			&-menu
+				justify-content: center
+				&__link
+					padding: 5px 11px
+					line-height: 16px
+	
+	.sign-content
+		padding: 0 15px
+		width: 100%
+		box-sizing: border-box
+
+	.steps
+		margin-bottom: 40px
+		width: 90%
+	
+	.digital
+		margin-bottom: 40px
+		padding: 15px 0 
+
+	.create
+		margin-bottom: 55px
+		.block-title__h2
+			margin-bottom: 5px
+		&__text
+			margin-bottom: 15px
+		&__btns .btn:not(:last-of-type)
+			margin-right: 10px
+
+	.aside-content
+		padding: 14px 40px 20px
+		width: 322px
+		&__header
+			padding-bottom: 16px
+		&__title
+			font-size: 24px
+			line-height: 24px
+		&__text
+			margin-bottom: 20px
+	// /sing-in page
+
+
+	
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -224,6 +279,57 @@
 		font-size: 24px
 	// /index page
 
+	// sign-in page
+	.page-columns__1
+		width: calc(100% - 200px)
+		.header__logo
+			width: 80%
+
+	.steps
+		margin-bottom: 30px
+		width: 100%
+		&__mark
+			margin-bottom: 10px
+		&__name
+			font-size: 13px
+			line-height: 16px
+
+	.digital
+		margin-bottom: 30px
+		padding: 10px 0
+		.block-title
+			&__h2
+				font-size: 22px
+				line-height: 26px
+			&__span
+				margin-top: 0
+				font-size: 14px
+	
+	.create 
+		margin-bottom: 40px
+		.block-title__h2
+			font-size: 24px
+			line-height: 26px
+		&__btns
+			display: flex
+			flex-direction: column
+			align-items: center
+			flex-wrap: wrap
+			.btn
+				margin: 0 auto 10px!important
+	
+	.form
+		&__label
+			margin-bottom: 20px
+		&__input
+			min-height: 30px
+			line-height: 29px
+	
+	.aside-content
+		padding: 14px 15px 20px
+		width: 200px
+	// /sign-in page
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	.header
@@ -232,6 +338,7 @@
 		&__logo
 			order: 3
 			width: 100%
+			min-height: 44px
 			text-align: center
 		&__img
 			margin: 5px auto
@@ -241,12 +348,46 @@
 		width: 100%
 		margin: 0 auto 20px
 			
-	//index page
+	// index page
 	.options-item
 		&__top-content 
 			margin-bottom: 10px
 			.btn
 				margin-bottom: 10px
+	// /index page
+
+	// sign-in page
+	.page-columns__1
+		width: 100%
+	
+	.btn_you-order
+		position: fixed
+		z-index: 5
+		top: 150px
+		left: auto
+		right: calc(0% - 50px)
+		display: block
+		width: 140px
+		padding: 8px
+		border-radius: 30px 30px 0 0
+		transform: rotate(-90deg)
+		transition: 0.4s
+		&_show
+			right: calc(100% - 100px)
+			//left: -12%
+
+	.aside-content
+		position: fixed
+		top: 0
+		right: -100%
+		z-index: 10
+		width: calc(100% - 50px)
+		height: 100vh
+		overflow: auto
+		transition: 0.25s
+		&_show
+			right: 0
+	// /sign-in page
 	
 
 /* Custom, iPhone Retina */
