@@ -643,6 +643,7 @@ figure {
 }
 
 .options-item__img {
+  display: block;
   width: 100%;
   height: auto;
   max-width: inherit;
@@ -1155,10 +1156,77 @@ figure {
 }
 
 /*==========  Desktop First  ==========*/
+/* Largest Devices, Wide Screens */
+@media only screen and (max-width: 1350px) {
+  .container {
+    width: 1170px;
+  }
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
   .container {
     width: 970px;
+  }
+  .flex-container__3 {
+    margin-right: 20px;
+    width: -webkit-calc((100% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+  }
+  .flex-container__4 {
+    margin-right: 20px;
+    width: -webkit-calc((100% - 60px) / 4);
+    width: calc((100% - 60px) / 4);
+  }
+  .btn {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .block-title {
+    margin-bottom: 30px;
+  }
+  .options-item__link-img {
+    margin-bottom: 20px;
+  }
+  .options-item__link {
+    font-size: 24px;
+  }
+  .options-item__cost {
+    font-size: 22px;
+  }
+  .options-item__cost-info {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .options-item__top-content {
+    margin-bottom: 20px;
+  }
+  .options-item__top-content .btn {
+    margin-bottom: 20px;
+  }
+  .options-item__li {
+    padding-left: 24px;
+    line-height: 20px;
+  }
+  .offers-item__title {
+    margin-bottom: 5px;
+  }
+  .offers-item__link {
+    font-size: 24px;
+  }
+  .offers-item__info {
+    margin: 0 0 10px;
+    font-size: 16px;
+  }
+  .benefits-item__block-icon {
+    margin-bottom: 10px;
+  }
+  .benefits-item__title {
+    margin: 0 0 5px;
+    font-size: 16px;
+  }
+  .benefits-item__info {
+    margin: 0;
   }
 }
 
@@ -1167,6 +1235,97 @@ figure {
   .container {
     width: 750px;
   }
+  .header {
+    margin-bottom: 43px;
+  }
+  .header__link {
+    padding: 10px 0;
+  }
+  .block-title {
+    margin-bottom: 20px;
+  }
+  .block-title__h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .block-title__span {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .btn {
+    font-size: 12px;
+    line-height: 26px;
+  }
+  .flex-container {
+    margin-bottom: 20px;
+  }
+  .flex-container__4 {
+    margin-right: 40px;
+    width: -webkit-calc((100% - 80px) / 2);
+    width: calc((100% - 80px) / 2);
+  }
+  .options-item {
+    padding-bottom: 15px;
+  }
+  .options-item__link-img {
+    margin-bottom: 10px;
+  }
+  .options-item__content {
+    padding: 0 15px;
+  }
+  .options-item__link {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .options-item__cost {
+    font-size: 20px;
+  }
+  .options-item__li {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    line-height: 20px;
+  }
+  .offers {
+    margin-bottom: 50px;
+  }
+  .offers-item__link {
+    font-size: 20px;
+  }
+  .offers-item__info {
+    font-size: 14px;
+  }
+  .benefits .block-title__h2 {
+    font-size: 30px;
+  }
+  .slider {
+    min-height: 400px;
+  }
+  .slider .slick-arrow {
+    width: 80px;
+  }
+  .slider .slide {
+    min-height: 400px;
+  }
+  .slider .slide__content {
+    margin: 0 auto;
+    width: -webkit-calc(100% - 80px);
+    width: calc(100% - 80px);
+  }
+  .slider .slide .container {
+    min-height: 400px;
+  }
+  .slider .slide__big-text {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .slider .slick-dots {
+    bottom: 45px;
+  }
+  .article-preview__title {
+    margin: 0 0 20px;
+    font-size: 26px;
+    line-height: 30px;
+  }
 }
 
 /* Small Devices, Tablets */
@@ -1174,11 +1333,146 @@ figure {
   .container {
     width: 100%;
   }
+  .header {
+    margin-bottom: 33px;
+    padding: 0 20px;
+  }
+  .header__link {
+    padding: 5px 0;
+    line-height: 28px;
+  }
+  .header__link::before {
+    margin-right: 5px;
+  }
+  .header__logo {
+    width: 40%;
+  }
+  .block-title__h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .block-title__span {
+    font-size: 13px;
+  }
+  .flex-container__3 {
+    margin-bottom: 20px;
+    width: -webkit-calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+  }
+  .flex-container__3:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .flex-container__3:last-of-type {
+    margin: 0 auto 20px;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px 0 20px 0;
+  }
+  .footer .copy {
+    margin: 0 auto 5px;
+  }
+  .footer-menu {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-menu__link {
+    padding: 5px 11px;
+    line-height: 16px;
+  }
+  .options {
+    margin-bottom: 40px;
+  }
+  .slider {
+    min-height: 300px;
+  }
+  .slider .slick-arrow {
+    width: 60px;
+  }
+  .slider .slide {
+    min-height: 300px;
+  }
+  .slider .slide__content {
+    margin: 0 auto;
+    width: -webkit-calc(100% - 60px);
+    width: calc(100% - 60px);
+  }
+  .slider .slide .container {
+    min-height: 300px;
+  }
+  .slider .slide__small-text {
+    line-height: 18px;
+  }
+  .slider .slide__big-text {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .slider .slick-dots {
+    bottom: 45px;
+  }
+  .article-preview__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  /**/
+  .header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .header__logo {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+       -moz-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 100%;
+    text-align: center;
+  }
+  .header__img {
+    margin: 5px auto;
+  }
+  .flex-container__3,
+  .flex-container__4 {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+  .options-item__top-content {
+    margin-bottom: 10px;
+  }
+  .options-item__top-content .btn {
+    margin-bottom: 10px;
+  }
 }
 
 /* Custom, iPhone Retina */
